@@ -119,7 +119,11 @@ module BreadcrumbsOnRails
       # @return [Element]
       #
       def initialize(name, path = nil, options = {})
-        self.name     = name
+        self.name     = if BreadcrumbsOnRails.truncate_length.present?
+                          name.truncate(BreadcrumbsOnRails.truncate_length)
+                        else
+                          name
+                        end
         self.path     = path
         self.options  = options
       end
