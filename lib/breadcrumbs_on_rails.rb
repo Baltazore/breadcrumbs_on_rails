@@ -14,6 +14,8 @@ require 'breadcrumbs_on_rails/railtie'
 
 module BreadcrumbsOnRails
 
+  mattr_accessor :truncate_length
+
   NAME            = 'Breadcrumbs on Rails'
   GEM             = 'breadcrumbs_on_rails'
 
